@@ -535,6 +535,8 @@
     margin-left: 12px;
 }
 
+/* Cart layout */
+
 .header__cart {
     width: 150px;
     text-align: center;
@@ -546,11 +548,94 @@
     margin-top: 6px;
 }
 
+.header__cart-wrap {
+    position: relative;
+    display: inline-block;
+    pad: 0 8px;
+    cursor: pointer;
+}
+
+.header__cart-wrap:hover .header__cart-list {
+    display: block;
+}
+
+.header__cart-list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: -11px;
+    background-color: var(--white-color);
+    width: 400px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3.125rem rgba(0, 0, 0, 0.2);
+    animation: fadeIn ease-in 0.3s;
+    cursor: default;
+}
+
+.header__cart-list::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 20px;
+    right: -4px;
+    top: -10px;
+}
+
+.header__cart-list::after {
+    content: "";
+    position: absolute;
+    border-color: transparent transparent var(--white-color) transparent;
+    border-style: solid;
+    border-width: 16px 18px;
+    right: 5px;
+    top: -25px;
+    cursor: pointer;
+}
+
+/* No cart */
+.header__cart-list--no-cart {
+    padding: 24px 0;
+}
+
+.header__cart-list--no-cart .header__cart-no-cart-img,
+.header__cart-list--no-cart .header__cart-no-cart-msg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__cart-no-cart-img {
+    width: 54%;
+    display: none;
+}
+
+.header__cart-no-cart-msg {
+    display: none;
+    font-size: 1.4rem;
+    margin-top: 14px;
+    color: var(--text-color);
+}
+
+/* Has cart */
+.header__cart-notice {
+    position: absolute;
+    top: -6px;
+    right: -14px;
+    padding: 1px 7px;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    border-radius: 10px;
+    border: 2px solid #EE4D2D;
+    columns: var(--primary-color);
+    background-color: var(--white-color);
+}
+
+/* Seach history */
 .header__search-input:focus ~ .header__search-history {
     display: block;
 }
 
-/* Seach history */
 .header__search-history {
     display: none;
     position: absolute;
@@ -590,5 +675,6 @@
     font-size: 1.4rem;
     color: var(--text-color);
     line-height: 38px;
+    display: block;
 }
 
