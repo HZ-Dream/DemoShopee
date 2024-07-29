@@ -1,3 +1,7 @@
+.app {
+    overflow: hidden;
+}
+
 .header {
     height: var(--header-height);
     background-image: linear-gradient(0 ,#fe6433 ,#f53d2d);
@@ -666,6 +670,7 @@
     display: inline-block;
     padding: 0 8px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* khi ấn vào không hiện nền ấn */
 }
 
 .header__cart-wrap:hover .header__cart-list {
@@ -979,6 +984,58 @@
     color: var(--primary-color);
 }
 
+/* Mobile category */
+.mobile-category__list {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.mobile-category__list::-webkit-scrollbar {
+    display: none; /* ẩn scroll */
+}
+
+.mobile-category__item {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.mobile-category__item:nth-child(3n + 1) .mobile-category__link{
+    background-color: #87afd8;
+}
+
+.mobile-category__item:nth-child(3n + 2) .mobile-category__link{
+    background-color: #76c9bd;
+}
+
+.mobile-category__item:nth-child(3n + 3) .mobile-category__link{
+    background-color: #88cf81;
+}
+
+.mobile-category__link {
+    --line-height: 2rem;
+    display: block;
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    line-height: var(--line-height);
+    height: calc(var(--line-height) * 2);
+    overflow: hidden;
+    text-align: center;
+    width: 110px;
+    border-radius: 5px;
+    font-weight: 300;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent; /* khi ấn vào không hiện nền ấn */
+    padding: 0 6px;
+}
+
 /* Home sort + filter */
 .home-filter {
     display: flex;
@@ -1237,6 +1294,7 @@ i.home-product-item__liked-icon {
 .home-product__pagination {
     margin-top: 48px;
     margin-bottom: 32px;
+    padding-left: 0;
 }
 
 /* Footer */
@@ -1342,6 +1400,7 @@ i.home-product-item__liked-icon {
 
 .header__sort-item--active .header__sort-link   {
     color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .header__sort-link {

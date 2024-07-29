@@ -1,12 +1,11 @@
 /* Mobile & Tablet */
 @media (max-width: 63.9375em /* < 1023px */) {
-    :root {
-        --header-height: 68px;
-        --navbar-height: 0px;
-    }
-
     .hide-on-mobile-tablet {
         display: none;
+    }
+
+    .app__content {
+        padding-top: 8px;
     }
 
     .header {
@@ -30,7 +29,7 @@
     }
 
     .header__cart-list::after {
-        right: 115px;
+        display: none;
     }
     
     .app__container {
@@ -40,6 +39,11 @@
 
 /* Tablet */
 @media (min-width: 46.25em /* >= 740px */) and (max-width: 63.9375em /* <= 1023px */) {
+    :root {
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
+
     .hide-on-tablet {
         display: none;
     }
@@ -55,10 +59,19 @@
         max-height: 23vh;
         overflow-y: auto; 
     }
+
+    .header__mobile-search {
+        margin-right: 13px;
+    }
 }
 
 /* Mobile */
 @media (max-width: 46.1875em /* <= 739px */) {
+    :root {
+        --header-height: 54px;
+        --navbar-height: 0px;
+    }
+
     .hide-on-mobile {
         display: none;
     }
@@ -70,6 +83,10 @@
     .header__cart,
     .header__logo {
         width: unset; /* bỏ đi width */
+    }
+
+    .header__sort-bar {
+        top: calc(var(--header-height) - 1px);
     }
 
     .header__search {
@@ -107,6 +124,54 @@
     .header__cart-notice {
         right: -5px;
     }
+
+    .pagination-item {
+        margin: 0;
+    }
+
+    .pagination-item__link {
+        --height: 28px;
+        font-size: 1.6rem;
+        min-width: 36px;
+    }
+
+    .app__content {
+        margin-left: 4px;
+        margin-right: 4px;
+        padding-top: 8px;
+    }
+
+    .home-product__pagination {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 0;
+    }
+
+    .header__logo-img {
+        width: 110px;
+    }
+    
+    .footer__content {
+        padding: 0 16px;
+    }
+
+    .footer__heading {
+        text-align: center;
+    }
+
+    .footer__download,
+    .footer-item__link {
+        justify-content: center;
+    }
+
+    .footer__download-apps {
+        flex: unset;
+    }
 }
 
-/* PC >= 1024px */
+/* PC */
+@media (min-width: 64em /* >= 1024 */) {
+    .hide-on-pc {
+        display: none;
+    }
+}
